@@ -10,19 +10,25 @@ Este proyecto implementa una API usando FastAPI que simula un sistema de pedidos
 Cada tipo de pedido es procesado por un "trabajador" que escucha el tópico correspondiente en MQTT.
 
 ## Prueba Funcionamiento 
-![Prueba](ubicacion_de_la_imagen)
+<img src="https://github.com/JonathanArroyaveGonzalez/ConcurrenciaYParalelismoWeb/blob/main/PruebaFuncionamiento.png?raw=true" alt="Prueba de funcionamiento" width="700px">
 
 ## Requisitos
 
-- Python 3.x
+- Python 
 - FastAPI
-- Paho MQTT
+[- MQTT Explorer](https://mqtt-explorer.com/)
 - Uvicorn
-- Servidor MQTT (como Mosquitto)
+[- Servidor MQTT Mosquitto ](https://mosquitto.org/download/)
 
 ## Instalación
 
 1. Clona el repositorio.
    ```bash
-   git clone https://github.com/tu_usuario/tu_repositorio.git
-   cd tu_repositorio
+   git clone https://github.com/JonathanArroyaveGonzalez/ConcurrenciaYParalelismoWeb.git
+2. Iniciar el servidor.
+   ```bash
+   uvicorn 13_burger_server_mqtt:app --reload
+3. Realizar peticiones al servidor con los tipos de clientes.
+   ```bash
+   python 13_burger_client_mqtt_sync.py
+   python 13_burger_client_mqtt.py
